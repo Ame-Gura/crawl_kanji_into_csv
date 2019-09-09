@@ -10,7 +10,7 @@ def crawl(kanji):
     html = requests.get(search_link(kanji))
     html.encoding = 'UTF-8'
     # html 파싱
-    soup = BeautifulSoup(html.text, 'html5lib')
+    soup = BeautifulSoup(html.text, 'lxml')
 
     # 음독
     um = soup.select('#content > div.section.all.section_word > div:nth-child(2) > dl:nth-child(2) > dd:nth-child(2)')
